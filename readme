@@ -1,79 +1,34 @@
 # Heart Disease Prediction using Decision Tree
 
-This repository contains a Jupyter/Colab notebook that builds a Decision Tree model to predict the presence of heart disease using the UCI Cleveland dataset.
+A simple project that predicts the presence of heart disease using a Decision Tree classifier.
 
-Notebook
-- File: `decision_tree_from_sctach.ipynb`
-- Open in Colab: (the notebook includes a Colab link banner)
+What I did
+- Collected and prepared a heart disease dataset (e.g., UCI/Cleveland).
+- Performed exploratory data analysis and cleaned/preprocessed the data (missing values, encoding, scaling as needed).
+- Trained and tuned a Decision Tree model.
+- Evaluated the model with common metrics (accuracy, precision, recall, F1, confusion matrix, ROC-AUC).
+- Saved the trained model and included the code/notebook used for analysis.
 
-Project summary
-- Goal: Predict whether a patient has heart disease (target column `hd`) from clinical features using a Decision Tree classifier (scikit-learn).
-- Dataset: `processed.cleveland.data` (UCI Heart Disease — Cleveland). The notebook initially loads the dataset and assigns columns:
-  - age, sex, cp, restbp, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal, hd
-- Initial row count (before cleaning): 303 rows
+Files (example)
+- `notebook.ipynb` — EDA, preprocessing, training and evaluation steps.
+- `train.py` — script to train the model and save the artifact.
+- `predict.py` — simple inference script (optional).
+- `model.pkl` — saved trained Decision Tree model (if present).
+- `requirements.txt` — Python dependencies.
 
-Preprocessing (as implemented in the notebook)
-1. Assign readable column names.
-2. Inspect data types and unique values.
-3. Detect missing values represented as `'?'` in columns `ca` and `thal`.
-4. Handle missing values (the notebook removes or imputes rows with `'?'` — confirm exact action and the resulting row count below).
-5. Convert columns to numeric types as needed and encode categorical variables if required.
-6. Split features (X) and target (y). Target `hd` is used for classification (confirm whether `hd` is treated as binary: 0 vs >0).
-
-Modeling
-- Model used: `DecisionTreeClassifier` from scikit-learn.
-- Evaluation methods: train/test split and (optionally) cross-validation (the notebook imports `train_test_split` and `cross_val_score`).
-- Metrics to record: accuracy, precision, recall, F1-score, confusion matrix, cross-validation mean ± std.
-
-Results
-- Rows removed due to missing values (ca / thal): [INSERT NUMBER HERE]
-- Rows after cleaning: [INSERT NUMBER HERE]
-
-Final model performance (fill these in from your notebook run)
-- Test set accuracy: [INSERT ACCURACY HERE]
-- Test set precision / recall / F1 by class:
-  - Class 0 (no heart disease): precision = [ ], recall = [ ], f1 = [ ]
-  - Class 1 (heart disease): precision = [ ], recall = [ ], f1 = [ ]
-- Confusion matrix:
-  - [[TN, FP],
-     [FN, TP]]
-  - Replace TN/FP/FN/TP with the numeric counts from the notebook.
-- Cross-validation (if used): mean accuracy = [INSERT MEAN], std = [INSERT STD]
-- Any other metrics or notes (AUC, feature importances, etc.): [INSERT]
-
-How to reproduce (run the notebook)
-1. Open `decision_tree_from_sctach.ipynb` in Colab or locally.
-2. Ensure dependencies are installed (typically):
-   - python >=3.8, pandas, numpy, matplotlib, scikit-learn, jupyter (or Colab)
-   - Example (pip):
-     ```bash
-     pip install pandas numpy matplotlib scikit-learn
-     ```
-3. Run cells top-to-bottom. The notebook:
-   - Loads `processed.cleveland.data`
-   - Names columns and inspects missing values
-   - Cleans the data
-   - Trains a `DecisionTreeClassifier`
-   - Evaluates and prints metrics
-4. If you want to re-run evaluation and print standard metrics, add/run cells like:
-   ```python
-   from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-   y_pred = model.predict(X_test)
-   print("Accuracy:", accuracy_score(y_test, y_pred))
-   print(classification_report(y_test, y_pred))
-   print("Confusion matrix:\n", confusion_matrix(y_test, y_pred))
+Quick start
+1. Install dependencies:
    ```
-   (Replace `model`, `X_test`, and `y_test` with the actual variable names used in the notebook.)
+   pip install -r requirements.txt
+   ```
+2. Run the notebook or train script:
+   - Notebook: open `notebook.ipynb`
+   - Script: `python train.py`
+3. Use `predict.py` (or load `model.pkl`) to run predictions on new samples.
 
-Notes and suggestions
-- Confirm whether the target `hd` was binarized (0 = no disease, 1 = disease) or if multiclass labels (0,1,2,3,4) were used; most Cleveland-based examples convert `hd` > 0 to 1.
-- If you removed rows with `'?'`, consider alternative imputation strategies if you want to preserve more samples (e.g., mode imputation for categorical fields).
-- Try hyperparameter tuning for the Decision Tree (max_depth, min_samples_split, criterion) and compare cross-validated performance to reduce overfitting.
-- Consider evaluating additional models (Random Forest, Logistic Regression) for a performance baseline.
+Notes
+- This project focuses on demonstrating a straightforward Decision Tree approach for heart disease prediction. It is intended as a learning/example project, not a clinical tool.
+- Replace dataset and file names below with the actual files in the repository if they differ.
 
-Credits
-- Dataset: UCI Heart Disease (Cleveland)
-- Notebook author: [your name or github: krishna324-art]
-
-
-
+If you want, I can commit this README.md file to your repository — tell me and I'll add it.
+```
