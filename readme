@@ -1,4 +1,4 @@
-# Heart Disease Prediction using Decision Tree
+ Heart Disease Prediction using Decision Tree
 
 A simple project that predicts the presence of heart disease using a Decision Tree classifier.
 
@@ -9,12 +9,7 @@ What I did
 - Evaluated the model with common metrics (accuracy, precision, recall, F1, confusion matrix, ROC-AUC).
 - Saved the trained model and included the code/notebook used for analysis.
 
-Files (example)
-- `notebook.ipynb` — EDA, preprocessing, training and evaluation steps.
-- `train.py` — script to train the model and save the artifact.
-- `predict.py` — simple inference script (optional).
-- `model.pkl` — saved trained Decision Tree model (if present).
-- `requirements.txt` — Python dependencies.
+
 
 Quick start
 1. Install dependencies:
@@ -26,9 +21,3 @@ Quick start
    - Script: `python train.py`
 3. Use `predict.py` (or load `model.pkl`) to run predictions on new samples.
 
-Notes
-- This project focuses on demonstrating a straightforward Decision Tree approach for heart disease prediction. It is intended as a learning/example project, not a clinical tool.
-- Replace dataset and file names below with the actual files in the repository if they differ.
-
-If you want, I can commit this README.md file to your repository — tell me and I'll add it.
-```
