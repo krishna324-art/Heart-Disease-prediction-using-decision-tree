@@ -11,13 +11,4 @@ What I did
 
 
 
-Quick start
-1. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-2. Run the notebook or train script:
-   - Notebook: open `notebook.ipynb`
-   - Script: `python train.py`
-3. Use `predict.py` (or load `model.pkl`) to run predictions on new samples.
 
